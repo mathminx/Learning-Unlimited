@@ -1,2 +1,2 @@
 # Learning-Unlimited
-A app connecting under privleaged students wiht tutors
+A app connecting under privleaged students with tutors
