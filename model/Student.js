@@ -1,11 +1,11 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Tutor extends Model {}
+class Student extends Model {}
 
-Tutor.init(
+Student.init(
     {
-        tutor_id: {
+        student_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
@@ -66,8 +66,8 @@ Tutor.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'tutor',
+        modelName: 'address',
     }
 );
 
-module.exports = Tutor;
+module.exports = Student;
