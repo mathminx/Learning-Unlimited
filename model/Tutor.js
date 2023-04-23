@@ -11,18 +11,6 @@ Tutor.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        street_address: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        city: {
-            type: DataTypes.STRING,
-            allowNull: false,            
-        },
-        postal_code: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
         instructional_level: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -51,13 +39,6 @@ Tutor.init(
             references: {
                 model: 'student',
                 key: 'student_id',
-            },
-        },
-        address_id:{
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'address',
-                key: 'address_id'
             },
         },
     },

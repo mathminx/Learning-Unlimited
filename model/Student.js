@@ -11,20 +11,8 @@ Student.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        street_address: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        city: {
-            type: DataTypes.STRING,
-            allowNull: false,            
-        },
-        postal_code: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        instructional_level: {
-            type: DataTypes.STRING,
+        income_level: {
+            type: DataTypes.INTEGER,
             allowNull: false,
         },
         date_created: {
@@ -46,18 +34,11 @@ Student.init(
                 key: 'subjet_id',
             },
         },
-        student_id: {
+        tutor_id: {
             type: DataTypes.INTEGER,
             references: {
-                model: 'student',
-                key: 'student_id',
-            },
-        },
-        address_id:{
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'address',
-                key: 'address_id'
+                model: 'tutor',
+                key: 'tutor_id',
             },
         },
     },
@@ -66,7 +47,7 @@ Student.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'address',
+        modelName: 'student',
     }
 );
 

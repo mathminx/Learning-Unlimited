@@ -1,6 +1,7 @@
 const User = require('./User');
-const Tutor = require('./TutorTutor');
 const Address = require('./Address');
+const Tutor = require('./TutorTutor');
+const Student = require('./Student');
 
 
 
@@ -8,4 +9,5 @@ const Address = require('./Address');
 
 
 
-module.exports = { User, Tutor, Address, }
+
+module.exports = { User, Address, Tutor, Student  }
