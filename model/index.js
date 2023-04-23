@@ -1,43 +1,43 @@
-const path = require('path');
-const express = require('express');
-const session = require('express-session');
-const exphbs = require('express-handlebars');
-const routes = Require('./controllers');
-const helpers = require('.utils/helpers');
+const User = require('./User');
+const Address = require('./Address');
+const Tutor = require('./TutorTutor');
+const Student = require('./Student');
+const Subject = require('./Subject');
 
-const sequelize = require('./config/connection');
-const SeqelizeStore = require('connect-session-sequelize')(session.Store);
-
-const app = express();
-const PORT = process.env.PORT || 3001;
-
-const hbs = exphbs.create({ helpers});
-
-const sess = {
-    secret: 'Super secret secret',
-    cookies: {
-        maxAge: 300000,
-        httpOnly: true,
-        secure: false,
-        sameSite: 'strict',
-    },
-    resave: false,
-    saveUninitialized: true,
-    store: new SequelizeStore({
-        db: sequelize
-    })
-};
-
-app.use(session(sess));
-
-app.engine('handlebars', hbs.engine);
-app.set('view engine', 'handlebars');
-
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, 'public')));
-app.use(routes);
-
-sequelize.sync({ force: false }).then(() => {
-    app.listen(PORT, () => console.log('Now listening'));
+User.hasOne(Address, {
+    foreignKey: 'user_id',
+    onDelete: 'CASCADE'
 });
+
+Address.belongsTo(User, {
+    foreignKey: 'user_id'
+});
+
+User.hasOne(Tutor, {
+    foreignKey: 'user_id',
+    onDelete: 'CASCADE'
+});
+
+Tutor.belongsTo(User, {
+    foreignKey: 'user_id'
+});
+
+Tutor.hasMany(Student, {
+    foreignKey: 'tutor_id',
+    OnDelete: 'CASCADE',
+});
+
+Student.belongsTo(Tutor, {
+    foreignKey: 'tutor_id',
+});
+
+Student.hasMany(Tutor, {
+    foreignKey: 'student_id',
+    OnDelete: 'CASCADE'
+});
+
+Tutor.belongsTo(Student, {
+    foreignKey: 'student_id',
+});
+
+module.exports = { User, Address, Tutor, Student, Subject };
