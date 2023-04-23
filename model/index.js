@@ -1,6 +1,6 @@
 const User = require('./User');
 const Address = require('./Address');
-const Tutor = require('./TutorTutor');
+const Tutor = require('./Tutor');
 const Student = require('./Student');
 const Subject = require('./Subject');
 
