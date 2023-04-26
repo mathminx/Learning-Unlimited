@@ -9,4 +9,4 @@ router.use('/Student', studentRoutes);
 router.use('/Subject', subjectRoutes );
 router.use('/User', userRoutes);
 
-module.exports = router;
+module.exports = router;x
