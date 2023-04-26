@@ -2,7 +2,8 @@ const sequelize =require('../config/connection');
 const seedUser = require('./userData');
 const seedAddress =require('./addressData');
 const seedStudent = require('./studentData');
-const seedTutor = require('./tutorData')
+const seedTutor = require('./tutorData');
+const seedSubject = require('./subjectData')
 
 
 
@@ -19,6 +20,7 @@ const seedAll = async ()=> {
 
     await seedTutor();
 
+    await seedSubject();
 
 };
 
