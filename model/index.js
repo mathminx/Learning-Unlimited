@@ -22,6 +22,15 @@ Tutor.belongsTo(User, {
     foreignKey: 'user_id'
 });
 
+User.hasOne(Student, {
+    foreignKey: 'user_id',
+    onDelete: 'CASCADE'
+});
+
+Student.belongsTo(User, {
+    foreignKey: 'user_id'
+});
+
 Tutor.hasMany(Student, {
     foreignKey: 'tutor_id',
     OnDelete: 'CASCADE',
