@@ -15,6 +15,10 @@ Subject.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
+        subject_level: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
         tutor_id: {
             type: DataTypes.INTEGER,
             references: {

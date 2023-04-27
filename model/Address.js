@@ -17,7 +17,7 @@ Address.init(
         },
         appt_number: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
         },
         street_name: {
             type: DataTypes.STRING,
