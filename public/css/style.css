@@ -1,0 +1,27 @@
+body {
+  margin: 0px;
+  background-image: url("../images/pxfuel.jpg");
+  background-size: cover;
+}
+
+.line-1 {
+  font-family: 'Callie Chalk Font', sans-serif;
+  font-size: 120px;
+  color: white;
+  margin: 0;
+  margin-top: 120px;
+  position: relative;
+  left: 25%;
+}
+
+.line-2 {
+  display: inline-block;
+  font-family: 'Callie Chalk Font', sans-serif;
+  font-size: 180px;
+  color: white;
+  position: relative;
+  left: 35%;
+  bottom: 40%;
+  margin: 0;
+  animation: shakeX;
+}
