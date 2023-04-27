@@ -1,11 +1,20 @@
 const router = require('express').Router();
-const { Tutor } = require('../../model');
+const { Tutor, User, Student} = require('../../model');
 const withAuth = require('../../utils/auth');
 
-//router.get
-router.get('/', async (req, res) => {
-    res.render('all', {tutor});
+
+router.get('/', (req, res) => {
+    Tutor.findAll({include:[User]}).then(tutordata =>res.json(tutordata)).catch(err =>res.json(err))
   });
+  
+  router.get('/:id', (req, res) => {
+    Tutor.findOne({where:{id:req.params.id},include:[User]}).then(tutordata =>res.json(tutordata)).catch(err =>res.json(err))
+  });
+
+//router.get
+// router.get('/', async (req, res) => {
+//     res.render('all', {tutor});
+//   });
   
 
 //   router.get('/tutor/:num', async (req, res) => {
