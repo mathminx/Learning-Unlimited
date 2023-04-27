@@ -17,10 +17,10 @@ router.get('/', async (req, res) => {
 router.get('/tutor/:id', async (req, res) => {
     try {
       const tutorData = await Tutor.findByPk(req.params.id);
-      console.log(TutorData)
-      const tutor = dblearningUnlimited.get({ plain: true });
+      //console.log(tutorData)
+    //   const tutor = dblearningUnlimited.get({ plain: true });
 
-      res.render('tutor', { tutor });
+    //   res.render('tutor', { tutor });
       res.render('tutor', tutorData);
     } catch (err) {
       res.status(500).json(err);
@@ -58,6 +58,26 @@ router.put('/',async (req, res) => {
     }
   });
 
+  router.delete('/:id', withAuth, async (req, res) => {
+        try {
+          const tutorData = await Tutor.destroy({
+            where: {
+              id: req.params.id,
+              user_id: req.session.user_id,
+            },
+          });
+      
+          if (!tutorData) {
+            res.status(404).json({ message: 'No tutor found with this id!' });
+            return;
+          }
+      
+          res.status(200).json(tutorData);
+        } catch (err) {
+          res.status(500).json(err);
+        }
+      });
+    
 
 
 
