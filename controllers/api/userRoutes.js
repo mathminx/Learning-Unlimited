@@ -2,4 +2,4 @@ const router = require('express').Router();
 const {User} = require('../..model');
 const withAuth = require('../../utils/auth');
 
-module.export =  router;
+module.exports =  router;
