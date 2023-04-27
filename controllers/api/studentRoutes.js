@@ -2,19 +2,28 @@ const router = require('express').Router();
 const { Student } = require('../../model');
 const withAuth = require('../../utils/auth');
 
-//router.get
-router.get('/', async (req, res) => {
-    res.render('all', {student});
+
+router.get('/', (req, res) => {
+    Student.findAll({include:[User]}).then(studentdata =>res.json(studentdata)).catch(err =>res.json(err))
   });
   
-router.get('/student/:id', async (req, res) => {
-    try {
-      const studentData = await Student.findByPk(req.params.id);
-      res.render('student', studentData);
-    } catch (err) {
-      res.status(500).json(err);
-    }
+  router.get('/:id', (req, res) => {
+    Student.findOne({where:{id:req.params.id},include:[User]}).then(studentdata =>res.json(studentdata)).catch(err =>res.json(err))
   });
+
+// //router.get
+// router.get('/', async (req, res) => {
+//     res.render('all', {student});
+//   });
+  
+// router.get('/student/:id', async (req, res) => {
+//     try {
+//       const studentData = await Student.findByPk(req.params.id);
+//       res.render('student', studentData);
+//     } catch (err) {
+//       res.status(500).json(err);
+//     }
+//   });
 
    router.post('/', withAuth, async (req, res) => {
     try {
