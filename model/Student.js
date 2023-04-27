@@ -24,14 +24,14 @@ Student.init(
             type: DataTypes.INTEGER,
             references: {
                 model: 'user',
-                key: 'id',
+                key: 'user_id',
             },
         },
         subject_id: {
             type: DataTypes.INTEGER,
             references: {
                 model: 'subject',
-                key: 'subjet_id',
+                key: 'subject_id',
             },
         },
         tutor_id: {
