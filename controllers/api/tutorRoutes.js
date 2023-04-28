@@ -8,8 +8,14 @@ router.get('/', (req, res) => {
   });
   
   router.get('/:id', (req, res) => {
-    Tutor.findOne({where:{tutor_id:req.params.id},include:[User]}).then(tutordata =>res.json(tutordata)).catch(err =>res.json(err))
+    Tutor.findOne({where:{id:req.params.id},include:[User]}).then(tutordata =>res.json(tutordata)).catch(err =>res.json(err))
   });
+
+//router.get
+// router.get('/', async (req, res) => {
+//     res.render('all', {tutor});
+//   });
+  
 
   router.post('/', (req, res) => {
     Tutor.create(req.body).then(tutordata =>res.json(tutordata)).catch(err =>res.json(err))

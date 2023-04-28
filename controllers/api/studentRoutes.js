@@ -8,11 +8,34 @@ router.get('/', (req, res) => {
   });
   
   router.get('/:id', (req, res) => {
-    Student.findOne({where:{student_id:req.params.id},include:[User]}).then(studentdata =>res.json(studentdata)).catch(err =>res.json(err))
+    Student.findOne({where:{id:req.params.id},include:[User]}).then(studentdata =>res.json(studentdata)).catch(err =>res.json(err))
   });
 
-router.post('/', (req, res) => {
-    Student.create(req.body).then(studentdata =>res.json(studentdata)).catch(err =>res.json(err))
+// //router.get
+// router.get('/', async (req, res) => {
+//     res.render('all', {student});
+//   });
+  
+// router.get('/student/:id', async (req, res) => {
+//     try {
+//       const studentData = await Student.findByPk(req.params.id);
+//       res.render('student', studentData);
+//     } catch (err) {
+//       res.status(500).json(err);
+//     }
+//   });
+
+   router.post('/', withAuth, async (req, res) => {
+    try {
+      const newStudent = await Student.create({
+        ...req.body,
+        user_id: req.session.user_id,
+      });
+  
+      res.status(200).json(newStudent);
+    } catch (err) {
+      res.status(400).json(err);
+    }
   });
   
   router.put('/:id', (req, res) => {
