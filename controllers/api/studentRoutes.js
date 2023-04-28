@@ -8,7 +8,8 @@ router.get('/', (req, res) => {
   });
   
   router.get('/:id', (req, res) => {
-    Student.findOne({where:{id:req.params.id},include:[User]}).then(studentdata =>res.json(studentdata)).catch(err =>res.json(err))
+    Student.findOne({where:{id:req.params.id},include:[User]})
+  .then(studentdata => res.json(studentdata)).catch(err =>res.json(err))
   });
 
 // //router.get
