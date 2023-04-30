@@ -4,7 +4,12 @@ const withAuth = require('../../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
-    const userData = await User.findAll({include:[Student, Tutor, Address]});
+    const userData = await User.findAll({
+      include:[Student, Tutor, Address]});
+    if (!userData) {
+      res.status(400).json({ message: "Unable to retrieve tutor data."});
+      return;
+    }
     res.status(200).json(userData);
   }
   catch(err) {
