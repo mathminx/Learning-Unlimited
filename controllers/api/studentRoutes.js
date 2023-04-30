@@ -1,16 +1,22 @@
 const router = require('express').Router();
-const { Student, User } = require('../../model');
+const { Student, Tutor, User } = require('../../model');
 const withAuth = require('../../utils/auth');
 
-
-router.get('/', (req, res) => {
-    Student.findAll({include:[User]}).then(studentdata =>res.json(studentdata)).catch(err =>res.json(err))
-  });
-  
-  router.get('/:id', (req, res) => {
-    Student.findOne({where:{id:req.params.id},include:[User]})
-  .then(studentdata => res.json(studentdata)).catch(err =>res.json(err))
-  });
+router.get('/', async (req, res) => {
+  try {
+    const studentData = await Student.findAll({
+      include: [{ model: Tutor, User }],
+    });
+    if (!studentData) {
+      res.status(400).json({ message: "Unable to retrieve student data."});
+      return;
+    }
+    res.status(200).json(studentData);
+  }
+  catch(err) {
+    res.status(500).json(err);
+  }
+});
 
 // //router.get
 // router.get('/', async (req, res) => {

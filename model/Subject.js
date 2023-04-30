@@ -19,20 +19,6 @@ Subject.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
-        tutor_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'tutor',
-                key: 'tutor_id',
-            },
-        },
-        student_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'student',
-                key: 'student_id',
-            },
-        },
     },
     {
         sequelize,
