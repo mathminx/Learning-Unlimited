@@ -5,39 +5,42 @@ const Student = require('./Student');
 const Subject = require('./Subject');
 
 User.hasOne(Address, {
-    foreignKey: 'user_id',
-    onDelete: 'CASCADE'
+  foreignKey: 'user_id',
+  onDelete: 'CASCADE'
 });
 
 Address.belongsTo(User, {
-    foreignKey: 'user_id'
+  foreignKey: 'user_id'
 });
 
 User.hasOne(Tutor, {
-    foreignKey: 'user_id',
-    onDelete: 'CASCADE'
+  foreignKey: 'user_id',
+  onDelete: 'CASCADE'
 });
 
 Tutor.belongsTo(User, {
-    foreignKey: 'user_id'
+  foreignKey: 'user_id'
 });
 
-Tutor.hasMany(Student, {
-    foreignKey: 'tutor_id',
-    OnDelete: 'CASCADE',
+User.hasOne(Student, {
+  foreignKey: 'user_id',
+  onDelete: 'CASCADE'
 });
 
-Student.belongsTo(Tutor, {
-    foreignKey: 'tutor_id',
+Student.belongsTo(User, {
+  foreignKey: 'user_id'
 });
 
-Student.hasMany(Tutor, {
-    foreignKey: 'student_id',
-    OnDelete: 'CASCADE'
-});
+Student.belongsToMany(Tutor, { through: 'StudentTutor'});
 
-Tutor.belongsTo(Student, {
-    foreignKey: 'student_id',
-});
+Tutor.belongsToMany(Student, { through: 'StudentTutor'});
 
-module.exports = { User, Address, Tutor, Student, Subject };
+Student.belongsToMany(Subject, { through: 'StudentSubject' });
+
+Subject.belongsToMany(Student, { through: 'StudentSubject' });
+
+Tutor.belongsToMany(Subject, { through: 'TutorSubject' });
+
+Subject.belongsToMany(Tutor, { through: 'TutorSubject' });
+
+module.exports = { Address, Student, Subject, Tutor, User };

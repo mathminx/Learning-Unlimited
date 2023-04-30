@@ -27,20 +27,6 @@ Student.init(
                 key: 'user_id',
             },
         },
-        subject_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'subject',
-                key: 'subject_id',
-            },
-        },
-        tutor_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'tutor',
-                key: 'tutor_id',
-            },
-        },
     },
     {
         sequelize,
