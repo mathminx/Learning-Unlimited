@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Learning Unlimited | Tutoring for Everyone</title>
+  <title>Learning Unlimited! | Tutoring for Everyone</title>
   <link rel="stylesheet" href="./css/style.css">
   <!-- UIkit CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.16.15/dist/css/uikit.min.css" />
@@ -19,46 +19,10 @@
   />
 </head>
 
-<body></body>
-  <div id="wrapper">
-    <nav id="nav">
-      <button uk-toggle="target: #my-id" type="button"></button>
-        <!-- This is the modal -->
-          <div id="my-id" uk-modal>
-            <div class="uk-modal-dialog uk-modal-body">
-                <h2 class="uk-modal-title"></h2>
-                <button class="uk-modal-close" type="button"></button>
-            </div>
-          </div>
-    </nav>
+<body class="uk-overflow-hidden">
+
+  {{{body}}}
   
-  <div class="hero expand: true uk-height-1-1">
-    <p class="line-1 animate__animated animate__delay-1s animate__fadeInDown">Learning</p>
-    <p class="line-2 animate__animated animate__delay-2s animate__faster animate__lightSpeedInRight ">Unlimited</p>
-    </h1>
-  </div> 
-</div>
-
-    
-  
-    <!--Conditionally render login or logout links 
-    <a href="/">Home</a>
-    {{#if loggedIn}}
-    <button id="logout" class="btn-no-style">Logout</button>
-    {{else}}
-    <a href="/public/js/login.js">Login</a>
-    {{/if}}
-  </nav>--> 
-
-  <footer>
-    
-  </footer>
-</div>
-
-<!-- Render script for logged in users only -->
-  {{#if logged_in}}
-  <script src="/public/js/logout.js"></script>
-  {{/if}}
 </body>
 
 </html>

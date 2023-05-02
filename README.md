@@ -2,7 +2,7 @@
 
 The unfortunate truth about tutoring services is that they are unaffordable for many families. Yet now more than ever, students need help with learning. The COVID-19 panedemic closed schools and made it very difficult for children and youth to continue the pace of in-person learning. Underprivileged youngsters were particularly vulnerable, as they may have lacked access to the technology required to keep up with their peers. It is because of the barriers to learning that children from low-income families face that we built this application. Learning Unlimited matches children whose families can't afford private tutoring with volunteer tutors willing to give up a little free time to help children in need attain their academic goals and lay the foundation for a promising future.
 
-This application was built using JavaScript, Node.js, Express, MySQL, Sequelize, Handlebars, and UIKit. The entire application is deployed via Heroku. Students create an account, specify the subject(s) for which they require tutoring, and then be matched with a tutor(s) who has created an account and indicated that they can tutor that subject. 
+This application was built using JavaScript, Jass, Node.js, MySQL, and Handlbars. The entire application is deployed via Heroku. Students create an account, specify the subject(s) for which they require tutoring, and then be matched with a tutor(s) who has created an account and indicated that they can tutor that subject. 
 
 <insert screenshot of main page here>
 
