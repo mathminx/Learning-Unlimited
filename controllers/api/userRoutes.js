@@ -61,7 +61,7 @@ router.get('/', async (req, res) => {
       //});
 router.get('/:id', async (req, res) => {
   try {
-    const userData = await Subject.findByPk(req.params.id, {include: [Student, tutor, Subject] });
+    const userData = await User.findByPk(req.params.id, {include: [Student, Tutor, Address] });
     console.log(userData)
     const user = userData.get({ plain: true });
     res.status(200).json(user);
