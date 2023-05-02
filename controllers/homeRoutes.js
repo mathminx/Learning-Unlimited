@@ -3,7 +3,13 @@ const {User} = require("../model");
 
 router.get('/', async (req, res) => {
   // Send the rendered Handlebars.js template back as the response
-  res.render('./layouts/main');
+  res.render('homepage');
+});
+
+router.get('/login', async (req, res) => {
+  // Send the rendered Handlebars.js template back as the response
+  res.render('login');
 });
 
 module.exports = router;
+

@@ -1,6 +1,9 @@
-html, body{ 
+html, body, .hero { 
+  font-family: 'Callie Chalk Font', sans-serif;
   height: 100%;
   margin: 0px;
+  color: white;
+  overflow-x: hidden;
  } 
 
 body {
@@ -8,23 +11,53 @@ body {
   background-size: cover;
 }
 
+ul {
+  height: 5%;
+  padding-top: 20px;
+  margin: 0;
+}
+
+li {
+  padding: 0 25px;
+  
+}
+
+a {
+  padding: 0px;
+  position: relative;
+  bottom: 20px;
+}
+
 .line-1 {
+  color: white;
   font-family: 'Callie Chalk Font', sans-serif;
   font-size: 120px;
-  color: white;
   margin: 0;
   margin-top: 120px;
   position: relative;
-  left: 25%;
+  left: 30%;
 }
 
 .line-2 {
+  color: white;
   display: inline-block;
   font-family: 'Callie Chalk Font', sans-serif;
   font-size: 180px;
-  color: white;
   position: relative;
   left: 35%;
   margin: 0;
-  animation: shakeX;
+  /*animation: shakeX;*/
+}
+
+#about {
+  color:black;
+  background-color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  background-repeat: no-repeat;
+  padding-right: 80px;
+}
+
+form {
+  left: center;
+  top: 150px;
 }
