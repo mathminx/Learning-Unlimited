@@ -1,3 +1,5 @@
+style.css
+
 html, body, .hero { 
   font-family: 'Callie Chalk Font', sans-serif;
   height: 100%;
@@ -54,10 +56,11 @@ a {
   background-color: white;
   font-family: Arial, Helvetica, sans-serif;
   background-repeat: no-repeat;
-  padding-right: 80px;
+  padding-right: 60px;
 }
 
 form {
   left: center;
   top: 150px;
 }
+ 
