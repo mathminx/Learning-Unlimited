@@ -72,14 +72,28 @@ router.get('/:id', async (req, res) => {
 });
 router.post('/', async (req, res)=> {
   try{
-    const UserData = await User.create(req.body);
+    const userData = await User.create(req.body);
     //req.session.save(() => {
       //req.session.User_id = userDAta.id;
       //req.session.logged_in = true;
     //});
-    res.status(200).json(UserData);
+    res.status(200).json(userData);
   } catch (err) {res.status(400).json(err);}
 });
+
+// router.post('/', async (req, res) => {
+//   try {
+//     const newUser = await User.create({
+//       ...req.body,
+//       user_id: req.session.user_id,
+//     });
+
+//     res.status(200).json(newUser);
+//   } catch (err) {
+//     res.status(400).json(err);
+//   }
+// });
+
 router.put('/:id', async (req, res) => {
   try {
     console.log(req.params.id, req.body)
@@ -93,7 +107,7 @@ router.put('/:id', async (req, res) => {
     res.status(400).json(err)
   };
 });
-router.delete('/:id', withAuth, async (req, res) => {
+router.delete('/:id',  async (req, res) => {
   try {
     const userData = await User.destroy({where:{user_id:req.params.id}})
     // user.destroy({
