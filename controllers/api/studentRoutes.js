@@ -50,13 +50,13 @@ router.get('/:id', async (req, res) => {
   //   }
   // });
   
-  router.put('/:id', (req, res) => {
-    Student.update(req.body,{where:{student_id:req.params.id}}).then(studentdata =>res.json(studentdata)).catch(err =>res.json(err))
-  });
+  // router.put('/:id', (req, res) => {
+  //   Student.update(req.body,{where:{student_id:req.params.id}}).then(studentdata =>res.json(studentdata)).catch(err =>res.json(err))
+  // });
   
-  router.delete('/:id', (req, res) => {
-    Student.destroy({where:{student_id:req.params.id}}).then(studentdata =>res.json(studentdata)).catch(err =>res.json(err))
-  });
+  // router.delete('/:id', (req, res) => {
+  //   Student.destroy({where:{student_id:req.params.id}}).then(studentdata =>res.json(studentdata)).catch(err =>res.json(err))
+  // });
 
 // // //router.get
 // // router.get('/', async (req, res) => {
