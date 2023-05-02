@@ -55,15 +55,82 @@ router.post('/', async (req, res) => {
   }
 });
 
-router.post('/logout', (req, res) => {
-  if (req.session.logged_in) {
-    // Remove the session variables
-    req.session.destroy(() => {
-      res.status(204).end();
-    });
-  } else {
-    res.status(404).end();
-  }
+
+router.put('/:id', (req, res) => {
+  User.update(req.body,{where:{user_id:req.params.id}})
+  .then(userData => res.status(200).json(userData))
+  .catch (err => res.status(400).json(err));
 });
 
-module.exports = router;
+
+
+  router.delete('/:id', withAuth, async (req, res) => {
+        try {
+          const userData = await User.destroy({
+            where: {
+              id: req.params.id,
+              user_id: req.session.user_id,
+            },
+          });
+      
+          if (!userData) {
+            res.status(404).json({ message: 'user ID incorrect.' });
+            return;
+          }
+      
+          res.status(200).json(userData);
+        } catch (err) {
+          res.status(500).json(err);
+        }
+      });
+    
+
+router.put('/:id', async (req, res)=> {
+  try{
+    const UserData =  await User.create(req.body);
+
+    req.session.save(() => {
+      req.sessionID.User_id = UserData.id;
+      req.session.logged_in = true;
+      res.status(200).json(UserData);
+    });
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});     
+
+router.post('/:id', async (req, res)=> {
+  try{
+    const UserData = await User.create(req.body);
+
+
+    req.session.save(() => {
+      req.session.User_id = userDAta.id;
+      req.session.logged_in = true;
+      res.status(200).json(UserData);
+    });
+  } catch (err) {res.status(400).json(err)};
+});
+
+router.delete('/:id', withAuth, async (req, res) => {
+  try {
+    const UserData = await UserData.destroy({
+      id: req.params.id,
+      user_id: req.session.user_id,
+    });
+
+
+    if (UserData) {
+      res.status(404).json('no user found.');
+    }
+    res.status(200).json(UserData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+  
+});
+
+
+
+
+
