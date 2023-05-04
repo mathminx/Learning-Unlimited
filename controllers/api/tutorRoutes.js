@@ -11,6 +11,7 @@ router.get('/', async (req, res) => {
       return;
     }
     res.status(200).json(tutorData);
+    res.render('tutor', { tutor });
   }
   catch(err) {
     res.status(500).json(err);
@@ -60,7 +61,7 @@ router.get('/:id', async (req, res) => {
       console.log(tutorData)
       const tutor = tutorData.get({ plain: true });
       res.status(200).json(tutor);
-      //res.render('tutor', { tutor });
+      res.render('tutor', { tutor });
     } catch (err) {
       res.status(500).json(err);
     }

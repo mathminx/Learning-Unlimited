@@ -1,0 +1,104 @@
+
+<nav class="uk-navbar uk-margin-medium-left uk-margin-medium-right">
+  <div class="uk-navbar-right">
+    <ul class = "uk-nav">
+      <li class="uk-active uk-inline uk-text-large">Logout<a href="/logout" uk-toggle></a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="row">
+  <div class="col-md-6" >
+    <h2>Student Profile</h2>
+
+    <form class="form studentProfile-form">
+         <div class="form-group">
+        <label for="income">Income:</label>
+        <input class="form-input" type="text" id="income_level" />
+      </div>
+      <div class="form-group">
+        <label for="email-login">email:</label>
+        <input class="form-input" type="text" id="email-login" />
+      </div>
+      {{!-- <div class="form-group">
+        <label for="Grade level">Grade Level:</label>
+        <input class="form-input" type="integer" id="grade-level" />
+      </div> --}}
+       <div class="form-group">
+        <label for="subject name">Subject Name:</label>
+        <input class="form-input" type="text" id="subject_name" />
+      </div>
+       <div class="form-group">
+        <label for="subject level">Subject Grade Level:</label>
+        <input class="form-input" type="integer" id="subject_level" />
+      </div>
+        <div class="form-group">
+        <label for="Address">Address:</label>
+        {{!-- <input class="form-input" type="text" id="address_id" /> --}}
+        <div class="form-group">
+        <label for="Address">Street Number:</label>
+        <input class="form-input" type="text" id="street_number" />
+        </div>
+        <div class="form-group">
+        <label for="Address">Appt Number:</label>
+        <input class="form-input" type="text" id="appt_number" />
+        </div>
+        <div class="form-group">
+        <label for="Address">Street Name:</label>
+        <input class="form-input" type="text" id="street_name" />
+        </div>
+         <div class="form-group">
+        <label for="Address">City:</label>
+        <input class="form-input" type="text" id="city" />
+        </div>
+         <div class="form-group">
+        <label for="Address">Postal Code:</label>
+        <input class="form-input" type="text" id="postal_code" />
+        </div>
+      </div>
+      <div class="form-group">
+        <button class="btn btn-primary" type="submit">Set-Profile</button>
+      </div>
+    </form>
+  </div>
+  <div class="col-md-6">
+    <h2>Tutor Profile</h2>
+
+    <form class="form tutorprofile-form">
+      <div class="form-group">
+        <label for="instructional level">Qualification:</label>
+        <input class="form-input" type="text" id="instructional_level" />
+      </div>
+      </div>
+        <div class="form-group">
+        <label for="Address">Address:</label>
+        {{!-- <input class="form-input" type="text" id="address_id" /> --}}
+         <div class="form-group">
+        <label for="Address">Street Number:</label>
+        <input class="form-input" type="text" id="street_number" />
+        </div>
+        <div class="form-group">
+        <label for="Address">Appt Number:</label>
+        <input class="form-input" type="text" id="appt_number" />
+        </div>
+        <div class="form-group">
+        <label for="Address">Street Name:</label>
+        <input class="form-input" type="text" id="street_name" />
+        </div>
+         <div class="form-group">
+        <label for="Address">City:</label>
+        <input class="form-input" type="text" id="city" />
+        </div>
+         <div class="form-group">
+        <label for="Address">Postal Code:</label>
+        <input class="form-input" type="text" id="postal_code" />
+        </div>
+      </div>
+      <div class="form-group">
+        <button class="btn btn-primary" type="submit">Set Profile</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="/js/profile.js"></script>
