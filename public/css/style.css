@@ -1,8 +1,7 @@
-style.css
-
 html, body, .hero { 
   font-family: 'Callie Chalk Font', sans-serif;
-  height: 100%;
+  height: 100vh;
+  width: 100vw;
   margin: 0px;
   color: white;
   overflow-x: hidden;
@@ -59,7 +58,7 @@ a {
   padding-right: 60px;
 }
 
-form {
-  left: center;
-  top: 150px;
+label {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight:500;
 }
