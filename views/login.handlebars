@@ -1,60 +1,25 @@
-{{!-- Login.handlebars
-<h2>Login</h2>
-
-<form>
-  <div class="uk-form-horizontal"></div>
-    <label class="uk-form-label">Email:</label>
-    <input class="uk-input" type="text">
-    <label class="uk-form-label ">Password:</label>
-    <input class="uk-input" type="text">
+<body class="uk-position-cover uk-overlay uk-overlay-default uk-flex uk-flex-center uk-flex-middle">
+  <nav class="uk-navbar uk-margin-medium-left uk-margin-medium-right">
+    <div class="uk-navbar-right">
+      <ul class = "uk-nav">
+        <li class="uk-active uk-inline uk-text-large">Home<a href="/" uk-toggle></a></li>
+        <li class="uk-active uk-inline uk-text-large">Logout<a href="/" uk-toggle></a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="uk-grid" style="justify-content:center; padding-left:25%; padding-top:7%;" >
+    <div>
+      <form class="uk-form-stacked" style="font-family: Arial, Helvetica, sans-serif;">
+        <label class="uk-form-label uk-text-large" for="form-stacked-text" style="color:black; font-size: 40px; padding-top:5px">Email:</label>
+        <input id="email-login" class="uk-input uk-form-large uk-form-width-large" type="text" style="border-width: medium; border-color: black;">
+        <label class="uk-form-label uk-text-large" for="form-stacked-text" style="color:black; font-size: 40px; padding-top:15px">Password:</label>
+        <input "password-login" class="uk-input uk-form-large uk-form-width-large" type="password" value="" style="border-width: medium; border-color: black; ">
+      </form>
+    <div>
+      <button 
+        type="submit" class="uk-button uk-button-large uk-button-default" 
+        style="color:black; background-color:white; margin-top: 40px; border-width: medium; 
+        border-color: black; font-family: Arial, Helvetica, sans-serif; font-weight: bolder; font-size: 20px;">Submit
+      </button>
   </div>
-  
-
-<script src="../public/js/login.js"></script> --}}
-
-<div class="row">
-  <div class="col-md-6">
-    <h2>Login</h2>
-
-    <form class="form login-form">
-      <div class="form-group">
-        <label for="email-login">email:</label>
-        <input class="form-input" type="text" id="email-login" />
-      </div>
-      <div class="form-group">
-        <label for="password-login">password:</label>
-        <input class="form-input" type="password" id="password-login" />
-      </div>
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit">login</button>
-      </div>
-    </form>
-  </div>
-  <div class="col-md-6">
-    <h2>Signup</h2>
-
-    <form class="form signup-form">
-      <div class="form-group">
-        <label for="firstname-signup">First name:</label>
-        <input class="form-input" type="text" id="firstname-signup" />
-      </div>
-       <div class="form-group">
-        <label for="lastname-signup">Last name:</label>
-        <input class="form-input" type="text" id="lastname-signup" />
-      </div>
-      <div class="form-group">
-        <label for="email-signup">email:</label>
-        <input class="form-input" type="text" id="email-signup" />
-      </div>
-      <div class="form-group">
-        <label for="password-signup">password:</label>
-        <input class="form-input" type="password" id="password-signup" />
-      </div>
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit">signup</button>
-      </div>
-    </form>
-  </div>
-</div>
-
-<script src="/js/login.js"></script>
+</body>
