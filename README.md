@@ -4,7 +4,7 @@ The unfortunate truth about tutoring services is that they are unaffordable for 
 
 This application was built using JavaScript, Node.js, Express, MySQL, Sequelize, Handlebars, and UIKit. The entire application is deployed via Heroku. Students create an account, specify the subject(s) for which they require tutoring, and then be matched with a tutor(s) who has created an account and indicated that they can tutor that subject. 
 
-<insert screenshot of main page here>
+![image](https://user-images.githubusercontent.com/122234007/236257623-56f0e727-9c6d-4cf2-aeae-9acbf908f532.png)
 
 ## Table of Contents
 * [Installation](#installation)
@@ -12,20 +12,18 @@ This application was built using JavaScript, Node.js, Express, MySQL, Sequelize,
 * [Tests](#tests)
 * [Credits](#credits)
 * [License](#license)
-* [Badges](#badges)
-* [Features](#features)
 * [Wishlist](#wishlist)
  
 ## Installation
   
 To install locally, load dependencies by running `npm install`, followed by `npm start` to start the apllication.
 
-To use the application online, go to https://weird-name-12345.herokuapp.com/
+To use the application online, go to https://nameless-badlands-68494.herokuapp.com/
 
 
 ## Usage
 
-Click the `Get Started` button on the landing page.
+Click the `Login` button to create an account or log in; click the `About`button to read about the application.
 
 
 ## Credits
@@ -41,25 +39,19 @@ Contributors:
 [Sarah Vickery](https://github.com/mathminx)
 
 
-
-Assets:
-
-TBD
-
  ## License
 
  This project is licensed under the terms of the MIT license.
 
  ![License: ](https://img.shields.io/badge/License-MIT-blueviolet.svg)
 
-##
+
+## Badges
+
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)  ![CSS/Jass](https://img.shields.io/badge/css-%231572B6.svg?style=for-the-badge&logo=css&logoColor=white)![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)  ![NPM](https://img.shields.io/badge/NPM-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=white)  ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)  ![MySQL](https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white)  ![Sequelize](https://img.shields.io/badge/Sequelize-52B0E7?style=for-the-badge&logo=Sequelize&logoColor=white)  ![Insomnia](https://img.shields.io/badge/Insomnia-black?style=for-the-badge&logo=insomnia&logoColor=5849BE)  	![Handlebars.js](https://a11ybadges.com/badge?logo=handlebarsdotjs)  ![Heroku](https://img.shields.io/badge/heroku-%23430098.svg?style=for-the-badge&logo=heroku&logoColor=white)
   
 ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white) ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)  ![edX](https://img.shields.io/badge/edX-%2302262B.svg?style=for-the-badge&logo=edX&logoColor=white)
 
-Features:
-
-TBD
 
 ## Wishlist
 
