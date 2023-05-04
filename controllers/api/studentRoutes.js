@@ -31,7 +31,7 @@ router.get('/:id', async (req, res) => {
       console.log(studentData)
       const student = studentData.get({ plain: true });
       res.status(200).json(student);
-      //res.render('student', studentData);
+      res.render('student', studentData);
     } catch (err) {
       res.status(500).json(err);
     }
