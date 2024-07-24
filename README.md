@@ -18,7 +18,7 @@ This application was built using JavaScript, Node.js, Express, MySQL, Sequelize,
   
 To install locally, load dependencies by running `npm install`, followed by `npm start` to start the apllication.
 
-To use the application online, go to https://nameless-badlands-68494.herokuapp.com/
+<!-- To use the application online, go to https://nameless-badlands-68494.herokuapp.com/ -->
 
 
 ## Usage
